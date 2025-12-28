@@ -1,0 +1,16 @@
+{
+  "books": [
+    {
+      "titre": "test3",
+      "auteur": "test3",
+      "edition": "test3",
+      "anneeEdition": 1800,
+      "id": "2"
+    },
+    {
+      "id": "438f",
+      "titre": "testtitre",
+      "auteur": "testauteur"
+    }
+  ]
+}

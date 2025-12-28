@@ -1,0 +1,31 @@
+<section class="py-4">
+  <h2 class="mb-4">Ma Bibliothèque</h2>
+
+  <div class="container">
+    <div class="row"> @for (book of bookList(); track book.id) {
+        <div class="col-md-4">
+          <div class="card mb-3 shadow-sm" [routerLink]="['/book', book.id]">
+            <div class="row g-0">
+              <div class="col-md-4 d-flex align-items-center justify-content-center bg-light">
+                <i class="bi bi-book" style="font-size: 2rem;"></i>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{ book.titre }}</h5>
+                  <p class="card-text text-muted">Auteur : {{ book.auteur }}</p>
+                  <p class="card-text text-muted">Edition : {{ book.edition }}</p>
+                  <p class="card-text text-muted">Année d'édition : {{ book.anneeEdition }}</p>
+                  <p class="card-text text-muted">Id : {{ book.id }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      } @empty {
+        <div class="col-12">
+          <p class="alert alert-info">Aucun livre trouvé dans la bibliothèque.</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

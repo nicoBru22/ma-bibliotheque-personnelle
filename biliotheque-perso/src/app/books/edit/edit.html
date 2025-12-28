@@ -1,0 +1,55 @@
+<h3>Modifier le livre</h3>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="edit-form">
+  
+  <div class="form-group">
+    <label for="titre">Titre :</label>
+    <input id="titre" type="text" formControlName="titre" [class.is-invalid]="bookTitre.dirty && bookTitre.invalid">
+    
+    @if(bookTitre.dirty && bookTitre.invalid) {
+      <div class="error-message">
+        @if(bookTitre.hasError("required")) { <span>Le titre est requis.</span> }
+        @if(bookTitre.hasError("minlength")) { <span>Trop court (min {{BOOK_RULES().MIN_TITRE}}).</span> }
+      </div>
+    }
+  </div>
+
+  <div class="form-group">
+    <label for="auteur">Auteur :</label>
+    <input id="auteur" type="text" formControlName="auteur" [class.is-invalid]="bookAuteur.dirty && bookAuteur.invalid">
+    
+    @if(bookAuteur.dirty && bookAuteur.invalid) {
+      <div class="error-message">
+        @if(bookAuteur.hasError("required")) { <span>L'auteur est requis.</span> }
+      </div>
+    }
+  </div>
+
+  <div class="form-group">
+    <label for="edition">Édition :</label>
+    <input id="edition" type="text" formControlName="edition" [class.is-invalid]="bookEdition.dirty && bookEdition.invalid">
+    
+    @if(bookEdition.dirty && bookEdition.invalid) {
+      <div class="error-message">
+        @if(bookEdition.hasError("required")) { <span>La maison d'édition est requise.</span> }
+      </div>
+    }
+  </div>
+
+  <div class="form-group">
+    <label for="annee">Année d'Édition :</label>
+    <input id="annee" type="number" formControlName="anneeEdition" [class.is-invalid]="bookAnneeEdition.dirty && bookAnneeEdition.invalid">
+    
+    @if(bookAnneeEdition.dirty && bookAnneeEdition.invalid) {
+      <div class="error-message">
+        @if(bookAnneeEdition.hasError("required")) { <span>L'année est requise.</span> }
+        @if(bookAnneeEdition.hasError("min")) { <span>L'année doit être supérieure à {{BOOK_RULES().MIN_ANNEE}}.</span> }
+      </div>
+    }
+  </div>
+
+  <div class="actions">
+    <button type="submit" [disabled]="form.invalid">Valider les modifications</button>
+    <button type="button" (click)="form.reset()">Réinitialiser</button>
+  </div>
+</form>
