@@ -1,23 +1,23 @@
 @if (book(); as book) {
   <h1>{{ book.titre }}</h1>
   <p>Auteur : {{ book.auteur }}</p>
-  <p>Édition : {{ book.edition }} ({{ book.anneeEdition }})
-  </p>
-              <button class="btn btn-link text-decoration-none text-warning"
-             [routerLink]="['/book/edit', book.id]">
-              ÉDITER
-            </button>
-              <button 
-              class="btn btn-link text-decoration-none text-warning"
-              (click)="deleteBook()">
-              SUPPRIMER
-            </button>
-                        <button
-              class="btn btn-link text-decoration-none text-warning"
-              routerLink="/books"
-            >
-              RETOUR
-            </button>
+  <p>Édition : {{ book.edition }} ({{ book.anneeEdition }})</p>
+  
+  <button 
+    class="btn btn-link text-decoration-none text-warning"
+    [routerLink]="['/book/edit', book.id]">
+    ÉDITER
+  </button>
+  <button 
+    class="btn btn-link text-decoration-none text-warning"
+    (click)="deleteBook()">
+    SUPPRIMER
+  </button>
+  <button
+    class="btn btn-link text-decoration-none text-warning"
+    routerLink="/books">
+    RETOUR
+  </button>
 } @else {
   <p>Chargement du livre...</p>
 }
