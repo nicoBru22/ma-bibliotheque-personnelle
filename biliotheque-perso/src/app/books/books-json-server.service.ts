@@ -12,11 +12,16 @@ export class BooksJsonServerService implements BooksService {
     private readonly http = inject(HttpClient);
     private readonly BOOK_API_URL = environment.apiUrl;
 
-    getBookList(): Observable<Book[]> {
-        return this.http.get<any>(this.BOOK_API_URL).pipe(
-            map(res => Array.isArray(res) ? res : res.books) 
-        );
-    }
+getBookList(): Observable<Book[]> {
+    return this.http.get<any>(environment.apiUrl).pipe(
+        map(res => {
+            if (Array.isArray(res)) {
+                return res;
+            }
+            return res.books || [];
+        })
+    );
+}
 
     addNewBook(newBook: Book): Observable<Book> {
         return this.http.post<Book>(this.BOOK_API_URL, newBook);
