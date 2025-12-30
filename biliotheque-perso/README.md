@@ -1,59 +1,50 @@
-# BiliothequePerso
+# Ma Bibliothèque Personnelle
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.2.
+Application Angular permettant de gérer une collection de livres. 
 
-## Development server
+## Résumé
+Ce projet permet de réaliser les opérations **CRUD** (Create, Read, Update, Delete) sur une liste de livres :
+* Consulter la liste des ouvrages.
+* Ajouter un nouveau livre.
+* Modifier les informations d'un livre existant.
+* Supprimer un livre de la collection.
 
-To start a local development server, run:
+## Gestion des données
+L'application utilise une stratégie de données hybride selon l'environnement :
 
-```bash
-ng serve
-```
+* **En développement (Local) :** Utilisation d'un serveur fictif avec `json-server`. Les modifications sont persistantes dans le fichier `public/db.json`.
+* **En production (GitHub Pages) :** Utilisation du fichier `db.json` comme ressource statique. 
+    > **Note :** En raison de la nature statique de GitHub Pages, seule l'opération de lecture (GET) est disponible en ligne. Les opérations d'écriture (POST, PUT, DELETE) renverront une erreur 405.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Déploiement
+Le projet est hébergé sur GitHub et déployé via GitHub Pages.
+**Lien du site :** [https://nicobru22.github.io/ma-bibliotheque-personnelle/]
 
-## Code scaffolding
+## Installation et Utilisation (Développement)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Pour lancer le projet localement et profiter de toutes les fonctionnalités (CRUD) :
 
-```bash
-ng generate component component-name
-```
+1.  **Cloner le dépôt :**
+    ```bash
+    git clone [https://github.com/nicoBru22/ma-bibliotheque-personnelle.git]
+    cd ma-bibliotheque-personnelle
+    ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+2.  **Installer les dépendances :**
+    ```bash
+    npm install
+    ```
 
-```bash
-ng generate --help
-```
+3.  **Lancer l'API (JSON-Server) :**
+    Ouvrez un terminal et lancez :
+    ```bash
+    npm run api
+    ```
+    *L'API sera disponible sur `http://localhost:3000`*
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+4.  **Lancer l'application Angular :**
+    Ouvrez un second terminal et lancez :
+    ```bash
+    ng serve
+    ```
+    *L'application sera disponible sur `http://localhost:4200`*

@@ -1,0 +1,32 @@
+{
+  "books": [
+    {
+      "id": "7484",
+      "titre": "L'art de persuader",
+      "auteur": "Pascal",
+      "edition": "Librio",
+      "anneeEdition": 2021
+    },
+    {
+      "id": "5788",
+      "titre": "L'Utopie",
+      "auteur": "Thomas MORE",
+      "edition": "Librio",
+      "anneeEdition": 2018
+    },
+    {
+      "id": "484e",
+      "titre": "Gorgias",
+      "auteur": "Platon",
+      "edition": "Librio",
+      "anneeEdition": 2019
+    },
+    {
+      "id": "5323",
+      "titre": "test2",
+      "auteur": "test2",
+      "edition": "test2",
+      "anneeEdition": 1900
+    }
+  ]
+}
