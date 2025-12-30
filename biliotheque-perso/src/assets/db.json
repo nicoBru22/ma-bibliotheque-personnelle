@@ -20,6 +20,13 @@
       "auteur": "Platon",
       "edition": "Librio",
       "anneeEdition": 2019
+    },
+    {
+      "id": "5323",
+      "titre": "test2",
+      "auteur": "test2",
+      "edition": "test2",
+      "anneeEdition": 1900
     }
   ]
 }

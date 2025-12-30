@@ -1,19 +1,21 @@
 import { BooksService } from "./books.service";
-import { Observable } from "rxjs";
+import { map, Observable } from "rxjs";
 import { Book } from "./booksModel";
 import { inject, Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { environment } from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root' // Cela permet à Angular de trouver le service partout dans l'app
 })
 export class BooksJsonServerService implements BooksService {
     private readonly http = inject(HttpClient);
-    private readonly BOOK_API_URL = "http://localhost:3000/books";
+    private readonly BOOK_API_URL = environment.apiUrl;
 
     getBookList(): Observable<Book[]> {
-        return this.http.get<Book[]>(this.BOOK_API_URL);
-        
+        return this.http.get<any>(this.BOOK_API_URL).pipe(
+            map(res => Array.isArray(res) ? res : res.books) 
+        );
     }
 
     addNewBook(newBook: Book): Observable<Book> {
