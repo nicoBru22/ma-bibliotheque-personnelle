@@ -1,8 +1,33 @@
 <section class="py-4">
-  <h2 class="mb-4">Ma Bibliothèque</h2>
+  <h2 class="mb-4 titrePageBooks">Ma collection de livre</h2>
 
+  <div class="container mb-5">
+  <div class="row">
+    <div class="col-4 offset-4">
+      <div class="card">
+        <form class="card-body">
+          <div class="form-group">
+            <label for="search" class="form-label">Rechercher un livre</label>
+            <input
+              id="search"
+              type="text"
+              name="searchTerm"
+              class="form-control"
+              placeholder="Rechercher un livre"
+              #searchField
+              [value]="searchTerm()"
+              (input)="searchTerm.set(searchField.value)"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  
   <div class="container">
-    <div class="row"> @for (book of bookList(); track book.id) {
+    <div class="row"> @for (book of bookListFiltered(); track book.id) {
         <div class="col-md-4">
           <div class="card mb-3 shadow-sm" [routerLink]="['/book', book.id]">
             <div class="row g-0">
