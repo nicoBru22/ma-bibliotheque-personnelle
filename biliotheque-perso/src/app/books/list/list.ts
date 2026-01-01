@@ -19,12 +19,14 @@ export class List {
     initialValue: []
   })
 
-
   readonly bookListFiltered = computed(() => {
     const searchTerm = this.searchTerm();
     const bookList = this.bookList();
     return bookList.filter(book =>
       book.titre.toLowerCase().includes(searchTerm.trim().toLowerCase()))
   })
+
+  readonly numberOfBook = computed(() => this.bookList().length);
+
 
 }
