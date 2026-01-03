@@ -1,60 +1,62 @@
-<h1>Ajouter un Livre</h1>
+<section class="sectionAdd">
+    <h1 class="titreSectionAdd">Ajouter un Livre</h1>
 
-<div class="form-container">
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        
-        <div class="form-group">
-            <label for="titre">Titre :</label>
-            <input id="titre" type="text" formControlName="titre">
+    <div class="form-container">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
             
-            @if (bookTitre.dirty && bookTitre.invalid) {
-                <div class="error-messages">
-                    @if (bookTitre.hasError('required')) { <span>Le titre est obligatoire.</span> }
-                    @if (bookTitre.hasError('minlength')) { <span>Minimum {{ BOOK_RULES().MIN_TITRE }} caractères.</span> }
-                    @if (bookTitre.hasError('maxlength')) { <span>Maximum {{ BOOK_RULES().MAX_TITRE }} caractères.</span> }
-                </div>
-            }
-        </div>
+            <div class="form-group">
+                <label class="labelFormAdd"  for="titre">Titre :</label>
+                <input class="inputFormAdd" id="titre" type="text" formControlName="titre">
+                
+                @if (bookTitre.dirty && bookTitre.invalid) {
+                    <div class="error-messages">
+                        @if (bookTitre.hasError('required')) { <span>Le titre est obligatoire.</span> }
+                        @if (bookTitre.hasError('minlength')) { <span>Minimum {{ BOOK_RULES().MIN_TITRE }} caractères.</span> }
+                        @if (bookTitre.hasError('maxlength')) { <span>Maximum {{ BOOK_RULES().MAX_TITRE }} caractères.</span> }
+                    </div>
+                }
+            </div>
 
-        <div class="form-group">
-            <label for="auteur">Auteur :</label>
-            <input id="auteur" type="text" formControlName="auteur">
-            
-            @if (bookAuteur.dirty && bookAuteur.invalid) {
-                <div class="error-messages">
-                    @if (bookAuteur.hasError('required')) { <span>L'auteur est obligatoire.</span> }
-                    @if (bookAuteur.hasError('minlength')) { <span>Minimum {{ BOOK_RULES().MIN_AUTEUR }} caractères.</span> }
-                    @if (bookAuteur.hasError('maxlength')) { <span>Maximum {{ BOOK_RULES().MAX_AUTEUR }} caractères.</span> }
-                </div>
-            }
-        </div>
+            <div class="form-group">
+                <label class="labelFormAdd"  for="auteur">Auteur :</label>
+                <input class="inputFormAdd" id="auteur" type="text" formControlName="auteur">
+                
+                @if (bookAuteur.dirty && bookAuteur.invalid) {
+                    <div class="error-messages">
+                        @if (bookAuteur.hasError('required')) { <span>L'auteur est obligatoire.</span> }
+                        @if (bookAuteur.hasError('minlength')) { <span>Minimum {{ BOOK_RULES().MIN_AUTEUR }} caractères.</span> }
+                        @if (bookAuteur.hasError('maxlength')) { <span>Maximum {{ BOOK_RULES().MAX_AUTEUR }} caractères.</span> }
+                    </div>
+                }
+            </div>
 
-        <div class="form-group">
-            <label for="edition">Edition :</label>
-            <input id="edition" type="text" formControlName="edition">
-            
-            @if (bookEdition.dirty && bookEdition.invalid) {
-                <div class="error-messages">
-                    @if (bookEdition.hasError('required')) { <span>L'edition est obligatoire.</span> }
-                    @if (bookEdition.hasError('minlength')) { <span>Minimum {{ BOOK_RULES().MIN_EDITION}} caractères.</span> }
-                    @if (bookEdition.hasError('maxlength')) { <span>Maximum {{ BOOK_RULES().MAX_EDITION}} caractères.</span> }
-                </div>
-            }
-        </div>
+            <div class="form-group">
+                <label class="labelFormAdd"  for="edition">Edition :</label>
+                <input class="inputFormAdd" id="edition" type="text" formControlName="edition">
+                
+                @if (bookEdition.dirty && bookEdition.invalid) {
+                    <div class="error-messages">
+                        @if (bookEdition.hasError('required')) { <span>L'edition est obligatoire.</span> }
+                        @if (bookEdition.hasError('minlength')) { <span>Minimum {{ BOOK_RULES().MIN_EDITION}} caractères.</span> }
+                        @if (bookEdition.hasError('maxlength')) { <span>Maximum {{ BOOK_RULES().MAX_EDITION}} caractères.</span> }
+                    </div>
+                }
+            </div>
 
-        <div class="form-group">
-            <label for="anneeEdition">Année d'édition :</label>
-            <input id="anneeEdition" type="number" formControlName="anneeEdition">
-            
-            @if (bookAnneeEdition.dirty && bookAnneeEdition.invalid) {
-                <div class="error-messages">
-                    @if (bookAnneeEdition.hasError('required')) { <span>L'edition est obligatoire.</span> }
-                    @if (bookAnneeEdition.hasError('min')) { <span>Année minimale : {{ BOOK_RULES().MIN_ANNEE}}.</span> }
-                    @if (bookAnneeEdition.hasError('max')) { <span>Année maximale : {{ BOOK_RULES().MAX_ANNEE}}.</span> }
-                </div>
-            }
-        </div>
+            <div class="form-group">
+                <label class="labelFormAdd" for="anneeEdition">Année d'édition :</label>
+                <input class="inputFormAdd" id="anneeEdition" type="number" formControlName="anneeEdition">
+                
+                @if (bookAnneeEdition.dirty && bookAnneeEdition.invalid) {
+                    <div class="error-messages">
+                        @if (bookAnneeEdition.hasError('required')) { <span>L'edition est obligatoire.</span> }
+                        @if (bookAnneeEdition.hasError('min')) { <span>Année minimale : {{ BOOK_RULES().MIN_ANNEE}}.</span> }
+                        @if (bookAnneeEdition.hasError('max')) { <span>Année maximale : {{ BOOK_RULES().MAX_ANNEE}}.</span> }
+                    </div>
+                }
+            </div>
 
-        <button type="submit">Ajouter le livre</button>
-    </form>
-</div>
+            <button class="btnSubmitForm" type="submit">Ajouter le livre</button>
+        </form>
+    </div>
+</section>

@@ -2,6 +2,9 @@
 
 Application Angular permettant de gérer une collection de livres. 
 
+## Auteur
+Ce projet a été réalisé par Nicolas BRUNET
+
 ## Résumé
 Ce projet permet de réaliser les opérations **CRUD** (Create, Read, Update, Delete) sur une liste de livres :
 * Consulter la liste des ouvrages.

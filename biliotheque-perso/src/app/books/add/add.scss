@@ -1,8 +1,15 @@
-app-add {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
+
+.form-container {
+  border-radius: 15px;
+}
+
+.btnSubmitForm {
+  margin: 20px;
+  border-radius: 20px;
+  padding: 7px;
+  background-color: chocolate;
+  color: black;
+  font-weight: bold;
 }
 
 .form-container {
@@ -13,4 +20,22 @@ app-add {
 
 .form-group {
   margin-top: 20px;
+}
+
+.inputFormAdd {
+  width: 70%;
+}
+
+.labelFormAdd {
+  width: 100%;
+}
+
+.sectionAdd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titreSectionAdd {
+  margin: 20px;
 }
